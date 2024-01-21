@@ -1,8 +1,12 @@
+"use client";
 import styles from './links.module.css'
 import Link from 'next/link';
+
 import NavLink from './navLink/navLink';
+import { useState } from 'react';
 
  const Links = () => {
+    const [open,setOpen] = useState(false)
     const links =[
         {
             title:"Homepage",
@@ -26,6 +30,7 @@ import NavLink from './navLink/navLink';
         const isAdmin =true;
     
   return (
+    <div className={styles.container}>
     <div className={styles.links}>
         {links.map((link)=>(
             <NavLink item={link} Key={link.title}/>
@@ -39,7 +44,7 @@ import NavLink from './navLink/navLink';
                                 <NavLink item ={{title:"Admin",path:"/admin"}} />
                             
                         }
-                        <button>LogOut</button>
+                        <button className={styles.logout}>LogOut</button>
                         </>
 
                     ):(
@@ -47,6 +52,18 @@ import NavLink from './navLink/navLink';
             )
         }
 
+    </div>
+    <button onClick={()=>setOpen(prev=>!prev)}>Menu</button>
+    {
+        open && <div className={styles.mobileLinks}>
+            {
+                links.map((link)=>(
+                    <NavLink item={link} key={link.title}/>
+
+                ))
+            }
+            </div>
+    }
     </div>
   )
 };
