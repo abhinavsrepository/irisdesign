@@ -53,7 +53,7 @@ import { useState } from 'react';
         }
 
     </div>
-    <button onClick={()=>setOpen(prev=>!prev)}>Menu</button>
+    <button className={styles.menuButton} onClick={()=>setOpen(prev=>!prev)}>Menu</button>
     {
         open && <div className={styles.mobileLinks}>
             {
