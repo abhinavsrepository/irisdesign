@@ -30,3 +30,19 @@ a {
 
 
   }
+
+  @media{
+    (max-width:1536px){
+      .container{
+        width:1366px;
+      }  
+    }
+  }
+  
+  @media{
+    (max-width:1366px){
+      .container{
+        width:1280px;
+      }  
+    }
+  }
