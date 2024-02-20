@@ -3,6 +3,7 @@
 const error = () => {
   return (
     <div>error</div>
+    <div>error</div>
   )
 }
 
